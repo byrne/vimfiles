@@ -1,4 +1,5 @@
 source ~/.vim/vimrc
+source ~/.vim/taglistrc
 
 colorscheme railscasts
 set nu
@@ -6,3 +7,4 @@ set sts=2
 set sw=2
 let g:fuzzy_ignore = "gems/*"
 set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
+map <F10> :NERDTreeToggle<CR>
