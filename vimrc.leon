@@ -1,6 +1,6 @@
 source ~/.vim/vimrc
 
-colorscheme vibrantink
+colorscheme railscasts
 set nu
 set sts=2
 set sw=2
