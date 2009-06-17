@@ -8,3 +8,7 @@ set sw=2
 let g:fuzzy_ignore = "gems/*"
 set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
 map <F10> :NERDTreeToggle<CR>
+set fenc=utf-8
+set fencs=utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936
+set enc=utf-8
+let &termencoding=&encoding
