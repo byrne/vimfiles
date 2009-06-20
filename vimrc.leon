@@ -2,9 +2,85 @@ source ~/.vim/vimrc
 source ~/.vim/taglistrc
 
 colorscheme railscasts
+
 set nu
 set sts=2
 set sw=2
 let g:fuzzy_ignore = "gems/*"
+
+" font
 set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
-map <F10> :NERDTreeToggle<CR>
+
+" encoding
+set fenc=utf-8
+set fencs=utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936
+set enc=utf-8
+let &termencoding=&encoding
+
+" snippet
+let g:snip_set_textmate_cp=1
+set runtimepath+=~/.vim/snippets
+
+"Vertical split then hop to new buffer
+:noremap ,v :vsp^M^W^W<cr>
+:noremap ,h :split^M^W^W<cr>
+
+" Mappings
+" ********************************************************************
+" Professor VIM says '87% of users prefer jj over esc', jj abrams strongly disagrees
+imap jj <Esc>
+
+"for C -- http://vim.wikia.com/wiki/Delete_C_Function
+map <silent><leader>df 0d/{<Enter>daB
+
+"for Ruby -- http://vim.wikia.com/wiki/Delete_C_Function
+map <silent><leader>dd ?def <Enter>d%
+map <silent><leader>di ?if <Enter>d%
+
+" Inser New Line
+" **************************************************************
+map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
+map <Enter> o<ESC>
+set fo-=r " do not insert a comment leader after an enter, (no work, fix!!)
+
+
+" Cursor Movement
+" *************************************************************
+" Make cursor move by visual lines instead of file lines (when wrapping)
+map <up> gk
+map k gk
+imap <up> <C-o>gk
+map <down> gj
+map j gj
+imap <down> <C-o>gj
+map E ge
+
+" -----------------------------------------------------------------------------
+"  " | Pluggins |
+"  "
+"  -----------------------------------------------------------------------------
+
+" NERDTree
+"********************************************************************
+:noremap ,n :NERDTreeToggle<CR>
+
+" User instead of Netrw when doing an edit /foobar
+let NERDTreeHijackNetrw=1
+
+" Single click for everything
+let NERDTreeMouseMode=1
+
+
+" Taglist
+:noremap ,t :TlistToggle<CR>
+
+
+" SnippetsEmu
+" *****************************************************************
+imap <unique> <C-j> <Plug>Jumper
+let g:snip_start_tag = "_\."
+let g:snip_end_tag = "\._"
+let g:snip_elem_delim = ":"
+let g:snip_set_textmate_cp = '1' " Tab to expand snippets, not automatically.
+
+
