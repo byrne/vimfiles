@@ -17,10 +17,6 @@ set fencs=utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936
 set enc=utf-8
 let &termencoding=&encoding
 
-" snippet
-let g:snip_set_textmate_cp=1
-set runtimepath+=~/.vim/snippets
-
 "Vertical split then hop to new buffer
 :noremap ,v :vsp^M^W^W<cr>
 :noremap ,h :split^M^W^W<cr>
@@ -82,5 +78,4 @@ let g:snip_start_tag = "_\."
 let g:snip_end_tag = "\._"
 let g:snip_elem_delim = ":"
 let g:snip_set_textmate_cp = '1' " Tab to expand snippets, not automatically.
-
 
