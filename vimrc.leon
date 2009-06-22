@@ -17,9 +17,25 @@ set fencs=utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936
 set enc=utf-8
 let &termencoding=&encoding
 
+
+"Set to auto read when a file is changed from the outside
+set autoread
+
+"Set mapleader
+let mapleader = ","
+let g:mapleader = ","
+
+"Fast reloading of the .vimrc
+:nmap <leader>s :source ~/.vimrc<cr>
+"Fast editing of .vimrc
+:nmap <leader>m :e ~/.vimrc<cr>
+"When .vimrc is edited, reload it
+autocmd! bufwritepost vimrc source ~/.vimrc
+
+
 "Vertical split then hop to new buffer
-:noremap ,v :vsp^M^W^W<cr>
-:noremap ,h :split^M^W^W<cr>
+:noremap <leader>v :vsp^M^W^W<cr>
+:noremap <leader>h :split^M^W^W<cr>
 
 " Mappings
 " ********************************************************************
@@ -54,6 +70,7 @@ map j gj
 imap <down> <C-o>gj
 map E ge
 
+
 " -----------------------------------------------------------------------------
 "  " | Pluggins |
 "  "
@@ -61,7 +78,7 @@ map E ge
 
 " NERDTree
 "********************************************************************
-:noremap ,n :NERDTreeToggle<CR>
+:noremap <leader>n :NERDTreeToggle<CR>
 
 " User instead of Netrw when doing an edit /foobar
 let NERDTreeHijackNetrw=1
@@ -71,14 +88,8 @@ let NERDTreeMouseMode=1
 
 
 " Taglist
-:noremap ,t :TlistToggle<CR>
+:noremap <leader>t :TlistToggle<CR>
 
-
-" SnippetsEmu
-" *****************************************************************
-imap <unique> <C-j> <Plug>Jumper
-let g:snip_start_tag = "_\."
-let g:snip_end_tag = "\._"
-let g:snip_elem_delim = ":"
-let g:snip_set_textmate_cp = '1' " Tab to expand snippets, not automatically.
+"Paste toggle - when pasting something in, don't indent.
+set pastetoggle=<F3>
 
