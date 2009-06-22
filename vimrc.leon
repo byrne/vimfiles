@@ -54,7 +54,7 @@ map <silent><leader>di ?if <Enter>d%
 
 " Inser New Line
 " **************************************************************
-nmap <S-Enter> O<Esc> " awesome, inserts new line without going into insert mode
+nmap <S-Enter> O<Esc> " Work in gvim, awesome, inserts new line without going into insert mode
 nmap <Enter> o<Esc>
 "set fo-=r " do not insert a comment leader after an enter, (no work, fix!!)
 
@@ -93,3 +93,5 @@ let NERDTreeMouseMode=1
 "Paste toggle - when pasting something in, don't indent.
 set pastetoggle=<F3>
 
+imap <S-Enter> <Esc>O " Work in gvim
+imap <C-Enter> <Esc>o " Work in gvim
