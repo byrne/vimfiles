@@ -25,6 +25,9 @@ let &termencoding=&encoding
 " ********************************************************************
 " Professor VIM says '87% of users prefer jj over esc', jj abrams strongly disagrees
 imap jj <Esc>
+imap uu _
+imap hh =>
+imap aa @
 
 "for C -- http://vim.wikia.com/wiki/Delete_C_Function
 map <silent><leader>df 0d/{<Enter>daB
