@@ -1,6 +1,7 @@
 " File:          snipMate.vim
 " Author:        Michael Sanders
 " Version:       0.82
+" Last Updated:  June 10 2009
 " Description:   snipMate.vim implements some of TextMate's snippets features in
 "                Vim. A snippet is a piece of often-typed text that you can
 "                insert into your document using a trigger word followed by a "<tab>".
@@ -32,8 +33,8 @@ fun! MakeSnip(scope, trigger, content, ...)
 		let {var}[a:scope][a:trigger] = multisnip ? [[a:1, a:content]] : a:content
 	elseif multisnip | let {var}[a:scope][a:trigger] += [[a:1, a:content]]
 	else
-		"echom 'Warning in snipMate.vim: Snippet '.a:trigger.' is already defined.'
-		"		\ .' See :h multi_snip for help on snippets with multiple matches.'
+		echom 'Warning in snipMate.vim: Snippet '.a:trigger.' is already defined.'
+				\ .' See :h multi_snip for help on snippets with multiple matches.'
 	endif
 endf
 
