@@ -100,10 +100,6 @@ let Tlist_Ctags_Cmd="/usr/bin/ctags"
 "Paste toggle - when pasting something in, don't indent.
 set pastetoggle=<F3>
 
-imap <S-Enter> <Esc>O
-imap <C-Enter> <Esc>o
-imap <C-J> <Esc>lbi
-imap <C-K> <Esc>lwi
 
 " Omni Completion
 " *************************************************************
@@ -122,8 +118,11 @@ inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <C-J>      pumvisible() ? "\<PageDown>\<C-N>\<C-P>":"\<C-J>"
 inoremap <expr> <C-K>      pumvisible() ? "\<PageUp>\<C-P>\<C-N>":"\<C-K>"
 inoremap <C-]>             <C-X><C-]>
-inoremap <C-F>             <C-X><C-F>
-inoremap <C-D>             <C-X><C-D>
-inoremap <C-L>             <C-X><C-L>
 
+inoremap <S-Enter> <Esc>O
+inoremap <C-Enter> <Esc>o
+inoremap <C-H> <Esc>bi
+inoremap <C-L> <Esc>ea
+inoremap <C-J> <Esc>ji
+inoremap <C-K> <Esc>ki
 
