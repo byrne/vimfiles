@@ -123,6 +123,6 @@ inoremap <S-Enter> <Esc>O
 inoremap <C-Enter> <Esc>o
 inoremap <C-H> <Esc>bi
 inoremap <C-L> <Esc>ea
-inoremap <C-J> <Esc>ji
-inoremap <C-K> <Esc>ki
+inoremap <C-J> <Esc>ja
+inoremap <C-K> <Esc>ka
 
