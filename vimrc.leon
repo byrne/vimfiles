@@ -30,16 +30,16 @@ let mapleader = ","
 let g:mapleader = ","
 
 "Fast reloading of the .vimrc
-:nmap <leader>s :source ~/.vimrc<CR>
+nmap <leader>s :source ~/.vimrc<CR>
 "Fast editing of .vimrc
-:nmap <leader>m :e ~/.vimrc<CR>
+nmap <leader>m :e ~/.vimrc<CR>
 "When .vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vimrc
 
 
 "Vertical split then hop to new buffer
-:noremap <leader>v :vsp^M^W^W<CR>
-:noremap <leader>h :split^M^W^W<CR>
+noremap <leader>v :vsp^M^W^W<CR>
+noremap <leader>h :split^M^W^W<CR>
 
 " Mappings
 " ********************************************************************
@@ -67,13 +67,8 @@ set fo-=r
 " Cursor Movement
 " *************************************************************
 " Make cursor move by visual lines instead of file lines (when wrapping)
-map <up> gk
-map k gk
-imap <up> <C-o>gk
-map <down> gj
-map j gj
-imap <down> <C-o>gj
-map E ge
+nmap <up> gk
+nmap <down> gj
 
 
 
@@ -84,7 +79,7 @@ map E ge
 
 " NERDTree
 "********************************************************************
-:noremap <leader>n :NERDTreeToggle<CR>
+noremap <leader>n :NERDTreeToggle<CR>
 
 " User instead of Netrw when doing an edit /foobar
 let NERDTreeHijackNetrw=1
@@ -94,7 +89,7 @@ let NERDTreeMouseMode=1
 
 
 " Taglist
-:noremap <leader>t :TlistToggle<CR>
+noremap <leader>t :TlistToggle<CR>
 let Tlist_Ctags_Cmd="/usr/bin/ctags"
 
 "Paste toggle - when pasting something in, don't indent.
@@ -103,7 +98,7 @@ set pastetoggle=<F3>
 
 " Omni Completion
 " *************************************************************
-autocmd FileType html :set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -118,6 +113,22 @@ inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <C-J>      pumvisible() ? "\<PageDown>\<C-N>\<C-P>":"\<C-J>"
 inoremap <expr> <C-K>      pumvisible() ? "\<PageUp>\<C-P>\<C-N>":"\<C-K>"
 inoremap <C-]>             <C-X><C-]>
+
+" for convenience in insert mode
+inoremap ( ()<ESC>i
+inoremap ) <c-r>=ClosePair(')')<CR>
+inoremap { {}<ESC>i
+inoremap } <c-r>=ClosePair('}')<CR>
+inoremap [ []<ESC>i
+inoremap ] <c-r>=ClosePair(']')<CR>
+
+function ClosePair(char)
+    if getline('.')[col('.') - 1] == a:char
+        return "\<Right>"
+    else
+        return a:char
+    endif
+endf
 
 inoremap <S-Enter> <Esc>O
 inoremap <C-Enter> <Esc>o
