@@ -33,8 +33,15 @@ let g:mapleader = ","
 nmap <leader>s :source ~/.vimrc<CR>
 "Fast editing of .vimrc
 nmap <leader>m :e ~/.vimrc<CR>
-"When .vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/.vimrc
+"Quick visit quickfix list
+nmap <leader>cn :cn<CR>
+nmap <leader>cp :cp<CR>
+nmap <leader>cw :cw<CR>
+"Quick visit buffer list
+nmap <leader>bw :bw<CR>
+nmap <leader>bn :bn<CR>
+nmap <leader>bp :bp<CR>
+
 
 
 "Vertical split then hop to new buffer
@@ -58,8 +65,8 @@ map <silent><leader>di ?if <Enter>d%
 
 " Inser New Line
 " **************************************************************
-nmap <S-Enter> O<Esc>
-nmap <Enter> o<Esc>
+"nmap <S-Enter> O<Esc>
+"nmap <Enter> o<Esc>
 " do not insert a comment leader after an enter, (no work, fix!!)
 set fo-=r 
 
