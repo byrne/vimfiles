@@ -115,6 +115,13 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType cpp set omnifunc=cppcomplete#Complete
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 
+set expandtab
+set cindent
+set smartindent
+set autoindent
+set tabstop=4 shiftwidth=4 softtabstop=4 
+autocmd FileType ruby,eruby set tabstop=2 shiftwidth=2 softtabstop=2 
+
 
 inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <C-J>      pumvisible() ? "\<PageDown>\<C-N>\<C-P>":"\<C-J>"
