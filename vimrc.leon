@@ -77,7 +77,20 @@ set fo-=r
 nmap <up> gk
 nmap <down> gj
 
-
+" PHP 
+" *************************************************************
+nmap <leader>cp :w<CR>:!php -l %<CR>
+let phplinkrule_check=system("file ~/.vim/phplinkrule")
+let phpri=stridx(phplinkrule_check, "ERROR") 
+if phpri == -1
+    source ~/.vim/phplinkrule
+    function! PHP_FireFox()
+        let localpath=getcwd()."/".expand("%")
+        let filepath=PHP_ParseLink(localpath)
+        silent execute "!firefox"." ".filepath
+    endfunction
+    map <leader>rp :call PHP_FireFox()<CR>
+end
 
 " -----------------------------------------------------------------------------
 "  " | Pluggins |
