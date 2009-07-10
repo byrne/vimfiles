@@ -55,6 +55,7 @@ imap jj <Esc>
 imap uu _
 imap hh =>
 imap aa @
+imap kk ->
 
 "for C -- http://vim.wikia.com/wiki/Delete_C_Function
 map <silent><leader>df 0d/{<Enter>daB
