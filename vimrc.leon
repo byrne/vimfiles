@@ -165,3 +165,4 @@ inoremap <C-L> <Esc>ea
 inoremap <C-J> <Esc>ja
 inoremap <C-K> <Esc>ka
 
+set dir=/tmp
