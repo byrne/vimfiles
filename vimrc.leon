@@ -136,10 +136,14 @@ set autoindent
 set tabstop=4 shiftwidth=4 softtabstop=4 
 autocmd FileType ruby,eruby set tabstop=2 shiftwidth=2 softtabstop=2 
 
+inoremap <S-Enter> <Esc>O
+inoremap <C-Enter> <Esc>o
+inoremap <C-H> <Esc>bi
+inoremap <C-K> <Esc>ka
 
-inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
-inoremap <expr> <C-J>      pumvisible() ? "\<PageDown>\<C-N>\<C-P>":"\<C-J>"
-inoremap <expr> <C-K>      pumvisible() ? "\<PageUp>\<C-P>\<C-N>":"\<C-K>"
+inoremap <expr> <Esc>      pumvisible()?"\<C-e>":"\<Esc>"
+inoremap <expr> <C-J>      pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X>\<C-O>"
+inoremap <expr> <C-K>      pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
 inoremap <C-]>             <C-X><C-]>
 
 " for convenience in insert mode
@@ -158,11 +162,5 @@ function! ClosePair(char)
     endif
 endf
 
-inoremap <S-Enter> <Esc>O
-inoremap <C-Enter> <Esc>o
-inoremap <C-H> <Esc>bi
-inoremap <C-L> <Esc>ea
-inoremap <C-J> <Esc>ja
-inoremap <C-K> <Esc>ka
 
 set dir=/tmp
