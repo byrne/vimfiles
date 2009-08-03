@@ -34,9 +34,9 @@ nmap <leader>s :source ~/.vimrc<CR>
 "Fast editing of .vimrc
 nmap <leader>m :e ~/.vimrc<CR>
 "Quick visit quickfix list
-nmap <leader>qn :cn<CR>
-nmap <leader>qp :cp<CR>
-nmap <leader>qw :cw<CR>
+nmap <leader>fn :cn<CR>
+nmap <leader>fp :cp<CR>
+nmap <leader>fw :cw<CR>
 "Quick visit buffer list
 nmap <leader>bw :bw<CR>
 nmap <leader>bn :bn<CR>
@@ -54,15 +54,18 @@ noremap <leader>h :split^M^W^W<CR>
 imap jj <Esc>
 imap uu _
 imap hh =>
-imap aa @
-imap kk ->
+autocmd FileType ruby,eruby imap aa @
+autocmd FileType php imap kk ->
 
 "for C -- http://vim.wikia.com/wiki/Delete_C_Function
 map <silent><leader>df 0d/{<Enter>daB
 
-"for Ruby -- http://vim.wikia.com/wiki/Delete_C_Function
+"for Ruby 
 map <silent><leader>dd ?def <Enter>d%
 map <silent><leader>di ?if <Enter>d%
+
+"for PHP 
+map <silent><leader>dp ?function <Enter>0d}
 
 " Inser New Line
 " **************************************************************
