@@ -111,6 +111,8 @@ let NERDTreeHijackNetrw=1
 " Single click for everything
 let NERDTreeMouseMode=1
 
+" Avoid map conflict to NERD commenter
+let VCSCommandMapPrefix="<leader>v"
 
 " Taglist
 noremap <leader>t :TlistToggle<CR>
