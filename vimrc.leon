@@ -45,8 +45,8 @@ nmap <leader>bp :bp<CR>
 
 
 "Vertical split then hop to new buffer
-noremap <leader>v :vsp^M^W^W<CR>
-noremap <leader>h :split^M^W^W<CR>
+noremap <leader>sv :vsp^M^W^W<CR>
+noremap <leader>sh :split^M^W^W<CR>
 
 " Mappings
 " ********************************************************************
