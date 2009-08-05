@@ -1,5 +1,6 @@
 source ~/.vim/vimrc
 source ~/.vim/taglistrc
+source ~/.vim/temprc
 
 colorscheme railscasts
 
@@ -54,6 +55,8 @@ noremap <leader>sh :split^M^W^W<CR>
 imap jj <Esc>
 imap uu _
 imap hh =>
+imap ;; <ESC>A;
+
 autocmd FileType ruby,eruby imap aa @
 autocmd FileType php imap kk ->
 
@@ -143,8 +146,8 @@ autocmd FileType ruby,eruby set tabstop=2 shiftwidth=2 softtabstop=2
 
 inoremap <S-Enter> <Esc>O
 inoremap <C-Enter> <Esc>o
-inoremap <C-H> <Esc>bi
-inoremap <C-K> <Esc>ka
+inoremap <C-H> <Esc>i
+inoremap <C-L> <Esc>la
 
 inoremap <expr> <Esc>      pumvisible()?"\<C-e>":"\<Esc>"
 inoremap <expr> <C-J>      pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X>\<C-O>"
