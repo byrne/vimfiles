@@ -43,7 +43,8 @@ nmap <leader>bw :bw<CR>
 nmap <leader>bn :bn<CR>
 nmap <leader>bp :bp<CR>
 
-
+au BufNewFile,BufRead *.mxml set filetype=mxml
+au BufNewFile,BufRead *.as set filetype=actionscript
 
 "Vertical split then hop to new buffer
 noremap <leader>sv :vsp^M^W^W<CR>
