@@ -14,7 +14,7 @@ set tags=~/.vim/tags,./tags;
 set autochdir
 
 " font
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
+set guifont=DejaVu\ Sans\ Mono\ 10
 
 " encoding
 set fenc=utf-8
@@ -60,6 +60,9 @@ imap ;; <ESC>A;
 
 autocmd FileType ruby,eruby imap aa @
 autocmd FileType php imap kk ->
+
+" Python dict
+let g:pydiction_location = '~/.vim/ftplugin/pydiction/complete-dict' 
 
 "for C -- http://vim.wikia.com/wiki/Delete_C_Function
 map <silent><leader>df 0d/{<Enter>daB
