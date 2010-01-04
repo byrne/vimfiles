@@ -1,6 +1,8 @@
 source ~/.vim/vimrc
 source ~/.vim/taglistrc
-source ~/.vim/temprc
+if filereadable("~/.vim/temprc")
+    source ~/.vim/temprc
+endif
 
 colorscheme railscasts
 
