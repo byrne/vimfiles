@@ -3,6 +3,10 @@ h1. Usage
 Clone this repo into your home directory either as .vim (linux) or vimfiles (MF
 Windows).
 
+<pre><code>
+git clone git@github.com:scorpio/vimfiles.git
+</code></pre>
+
 Then cd into the repo and run this to get the snippets submodule:
 
 <pre><code>
@@ -10,8 +14,7 @@ git submodule init
 git submodule update
 </code></pre>
 
-Put this in your vimrc along with your personal hacks:
 <pre><code>
-source ~/.vim/vimrc      "linux
-source ~/vimfiles/vimrc  "windows
+ln -sf your_path/vimfiles ~/.vim
+ln -sf your_path/vimfiles/vimrc.leon ~/.vimrc
 </code></pre>
