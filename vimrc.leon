@@ -45,6 +45,8 @@ nmap <leader>bw :bw<CR>
 nmap <leader>bn :bn<CR>
 nmap <leader>bp :bp<CR>
 
+nmap <leader>p bPldw
+
 au BufNewFile,BufRead *.mxml set filetype=mxml
 au BufNewFile,BufRead *.as set filetype=actionscript
 
