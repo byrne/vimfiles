@@ -61,6 +61,7 @@ imap jj <Esc>
 imap uu _
 imap hh =>
 imap ;; <ESC>A;
+imap {{ <ESC>A{
 
 autocmd FileType ruby,eruby imap aa @
 autocmd FileType php imap kk ->
