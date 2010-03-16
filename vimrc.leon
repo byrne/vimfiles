@@ -151,6 +151,7 @@ set smartindent
 set autoindent
 set tabstop=4 shiftwidth=4 softtabstop=4 
 autocmd FileType ruby,eruby set tabstop=2 shiftwidth=2 softtabstop=2 
+autocmd FileType python,python set tabstop=2 shiftwidth=2 softtabstop=2 
 
 inoremap <S-Enter> <Esc>O
 inoremap <C-Enter> <Esc>o
