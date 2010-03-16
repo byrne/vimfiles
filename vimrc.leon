@@ -62,6 +62,7 @@ imap uu _
 imap hh =>
 imap ;; <ESC>A;
 imap {{ <ESC>A{
+imap :: <ESC>A:
 
 autocmd FileType ruby,eruby imap aa @
 autocmd FileType php imap kk ->
@@ -152,7 +153,7 @@ set smartindent
 set autoindent
 set tabstop=4 shiftwidth=4 softtabstop=4 
 autocmd FileType ruby,eruby set tabstop=2 shiftwidth=2 softtabstop=2 
-autocmd FileType python,python set tabstop=2 shiftwidth=2 softtabstop=2 
+autocmd FileType python,python set tabstop=4 shiftwidth=4 softtabstop=4
 
 inoremap <S-Enter> <Esc>O
 inoremap <C-Enter> <Esc>o
