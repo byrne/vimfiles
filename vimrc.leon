@@ -6,6 +6,7 @@ endif
 
 colorscheme railscasts
 
+set nolist
 set nu
 set sts=2
 set sw=2
@@ -62,7 +63,7 @@ imap uu _
 imap hh =>
 imap ;; <ESC>A;
 imap {{ <ESC>A{
-imap :: <ESC>A:
+imap :: <ESC>A :
 
 autocmd FileType ruby,eruby imap aa @
 autocmd FileType php imap kk ->
