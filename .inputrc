@@ -7,6 +7,7 @@ set keymap vi-command
 "\e[B": history-search-forward
 "\C-p": history-search-backward
 "\C-n": history-search-forward
+"\C-L": clean-screen
 "v": "iv"
 set keymap vi-insert
 # these are for vi-insert mode
@@ -14,6 +15,7 @@ set keymap vi-insert
 "\e[B": history-search-forward
 "\C-p": history-search-backward
 "\C-n": history-search-forward
+"\C-L": clean-screen
 "\e.": "!$"
 "jj": "\e"
 $endif
