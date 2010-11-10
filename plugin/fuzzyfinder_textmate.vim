@@ -134,5 +134,5 @@ if !exists('loaded_fuzzyfinder') "{{{
 end "}}}
 
 call InstantiateTextMateMode()
-
+ruby refresh_finder
 endif
