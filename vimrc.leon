@@ -1,8 +1,5 @@
 source ~/.vim/vimrc
 source ~/.vim/taglistrc
-if filereadable("~/.vim/temprc")
-    source ~/.vim/temprc
-endif
 
 colorscheme railscasts
 
@@ -45,6 +42,8 @@ nmap <leader>fw :cw<CR>
 nmap <leader>bw :bw<CR>
 nmap <leader>bn :bn<CR>
 nmap <leader>bp :bp<CR>
+"Surround
+nmap <leader><leader> ysiw
 
 nmap <leader>p bPldw
 
@@ -98,17 +97,17 @@ nmap <down> gj
 " PHP 
 " *************************************************************
 nmap <leader>cp :w<CR>:!php -l %<CR>
-let phplinkrule_check=system("file ~/.vim/phplinkrule")
-let phpri=stridx(phplinkrule_check, "ERROR") 
-if phpri == -1
-    source ~/.vim/phplinkrule
-    function! PHP_FireFox()
-        let localpath=getcwd()."/".expand("%")
-        let filepath=PHP_ParseLink(localpath)
-        silent execute "!firefox"." ".filepath
-    endfunction
-    map <leader>rp :call PHP_FireFox()<CR>
-end
+"let phplinkrule_check=system("file ~/.vim/phplinkrule")
+"let phpri=stridx(phplinkrule_check, "ERROR") 
+"if phpri == -1
+"    source ~/.vim/phplinkrule
+"    function! PHP_FireFox()
+"        let localpath=getcwd()."/".expand("%")
+"        let filepath=PHP_ParseLink(localpath)
+"        silent execute "!firefox"." ".filepath
+"    endfunction
+"    map <leader>rp :call PHP_FireFox()<CR>
+"end
 
 " -----------------------------------------------------------------------------
 "  " | Pluggins |
