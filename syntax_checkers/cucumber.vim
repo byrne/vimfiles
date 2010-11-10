@@ -1,5 +1,5 @@
 "============================================================================
-"File:        sass.vim
+"File:        cucumber.vim
 "Description: Syntax checking plugin for syntastic.vim
 "Maintainer:  Martin Grenfell <martin.grenfell at gmail dot com>
 "License:     This program is free software. It comes without any warranty,
@@ -9,25 +9,19 @@
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
 "
 "============================================================================
-if exists("loaded_sass_syntax_checker")
+if exists("loaded_cucumber_syntax_checker")
     finish
 endif
-let loaded_sass_syntax_checker = 1
+let loaded_cucumber_syntax_checker = 1
 
-"bail if the user doesnt have the sass binary installed
-if !executable("sass")
+"bail if the user doesnt have cucumber installed
+if !executable("cucumber")
     finish
 endif
 
-function! SyntaxCheckers_sass_GetLocList()
-    let makeprg='sass --check %'
-    let errorformat = '%Wwarning on line %l:,%Z%m,Syntax %trror on line %l: %m'
-    let loclist = SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
+function! SyntaxCheckers_cucumber_GetLocList()
+    let makeprg = 'cucumber --dry-run --quiet --strict --format pretty %'
+    let errorformat =  '%f:%l:%c:%m,%W      %.%# (%m),%-Z%f:%l:%.%#,%-G%.%#'
 
-    let bn = bufnr("")
-    for i in loclist
-        let i['bufnr'] = bn
-    endfor
-
-    return loclist
+    return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
 endfunction
