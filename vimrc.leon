@@ -3,6 +3,8 @@ source ~/.vim/taglistrc
 
 colorscheme railscasts
 
+set mouse=
+
 set nolist
 set nu
 set sts=2
