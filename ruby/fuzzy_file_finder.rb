@@ -227,6 +227,7 @@ class FuzzyFileFinder
           files.push(FileSystemEntry.new(directory, entry))
         end
       end
+    rescue => e
     end
 
     # Returns +true+ if the given name matches any of the ignore
