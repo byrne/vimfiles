@@ -134,7 +134,18 @@ noremap <leader>t :TlistToggle<CR>
 let Tlist_Ctags_Cmd="/usr/bin/ctags"
 
 "Paste toggle - when pasting something in, don't indent.
-set pastetoggle=<F3>
+set pastetoggle=<F2>
+
+nnoremap ; :
+
+" Easy window navigation
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap <silent> ,/ :nohlsearch<CR>
+
+cmap w!! w !sudo tee % >/dev/null
 
 
 " Omni Completion
