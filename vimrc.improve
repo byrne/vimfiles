@@ -1,0 +1,211 @@
+set t_Co=256
+source ~/.vim/vimrc
+source ~/.vim/taglistrc
+
+colorscheme railscasts
+
+set noautochdir
+set nolist
+set nu
+set sts=2
+set sw=2
+"let g:fuzzy_ignore = "gems/*"
+
+" ctags
+set tags=~/.vim/tags,./tags;
+
+" font
+set guifont=DejaVu\ Sans\ Mono\ 10
+
+" encoding
+set fenc=utf-8
+set fencs=utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936
+set enc=utf-8
+let &termencoding=&encoding
+
+
+"Set to auto read when a file is changed from the outside
+set autoread
+
+"Set mapleader
+let mapleader = ","
+let g:mapleader = ","
+
+"Fast reloading of the .vimrc
+nmap <leader>s :source ~/.vimrc<CR>
+"Fast editing of .vimrc
+nmap <leader>m :e ~/.vimrc<CR>
+"Quick visit quickfix list
+nmap <leader>fn :cn<CR>
+nmap <leader>fp :cp<CR>
+nmap <leader>fw :cw<CR>
+"Quick visit buffer list
+nmap <leader>bw :bw<CR>
+nmap <leader>bn :bn<CR>
+nmap <leader>bp :bp<CR>
+"Surround
+nmap <leader><leader> ysiw
+
+nmap <leader>p bPldw
+
+au BufNewFile,BufRead *.mxml set filetype=mxml
+au BufNewFile,BufRead *.as set filetype=actionscript
+
+"Vertical split then hop to new buffer
+noremap <leader>sv :vsp^M^W^W<CR>
+noremap <leader>sh :split^M^W^W<CR>
+
+"map to fuzzy finder text mate stylez
+nnoremap <silent> <c-f> :FufCoverageFile<CR>
+nnoremap <leader>ff :FufTaggedFile<CR>
+nnoremap <leader>ft :FufTag<CR>
+nnoremap <leader>fj :FufJumpList<CR>
+nnoremap <leader>fl :FufLine<CR>
+nnoremap <leader>fr :FufRenewCache<CR>
+
+nnoremap <leader>r viw"0p<CR>
+nnoremap <leader>R V"0p<CR>
+
+"map to bufexplorer
+nnoremap <C-B> :BufExplorer<cr>
+
+" Mappings
+" ********************************************************************
+" Professor VIM says '87% of users prefer jj over Esc', jj abrams strongly disagrees
+imap jj <Esc>
+imap uu _
+imap hh =>
+imap ;; <ESC>A;
+imap {{ <ESC>A{
+
+autocmd FileType ruby,eruby imap aa @
+autocmd FileType php imap kk ->
+autocmd FileType python imap :: <ESC>A :
+
+" Python dict
+let g:pydiction_location = '~/.vim/ftplugin/pydiction/complete-dict' 
+
+"for C -- http://vim.wikia.com/wiki/Delete_C_Function
+map <silent><leader>df 0d/{<Enter>daB
+
+"for Ruby 
+map <silent><leader>dd ?def <Enter>d%
+map <silent><leader>di ?if <Enter>d%
+
+"for PHP 
+map <silent><leader>dp ?function <Enter>0d}
+
+" Inser New Line
+" **************************************************************
+"nmap <S-Enter> O<Esc>
+"nmap <Enter> o<Esc>
+" do not insert a comment leader after an enter, (no work, fix!!)
+set fo-=r 
+
+
+" Cursor Movement
+" *************************************************************
+" Make cursor move by visual lines instead of file lines (when wrapping)
+nmap <up> gk
+nmap <down> gj
+
+" PHP 
+" *************************************************************
+nmap <leader>cp :w<CR>:!php -l %<CR>
+"let phplinkrule_check=system("file ~/.vim/phplinkrule")
+"let phpri=stridx(phplinkrule_check, "ERROR") 
+"if phpri == -1
+"    source ~/.vim/phplinkrule
+"    function! PHP_FireFox()
+"        let localpath=getcwd()."/".expand("%")
+"        let filepath=PHP_ParseLink(localpath)
+"        silent execute "!firefox"." ".filepath
+"    endfunction
+"    map <leader>rp :call PHP_FireFox()<CR>
+"end
+
+" -----------------------------------------------------------------------------
+"  " | Pluggins |
+"  "
+"  -----------------------------------------------------------------------------
+
+" NERDTree
+"********************************************************************
+noremap <leader>n :NERDTreeToggle<CR>
+
+" User instead of Netrw when doing an edit /foobar
+let NERDTreeHijackNetrw=1
+
+" Single click for everything
+let NERDTreeMouseMode=1
+
+" Avoid map conflict to NERD commenter
+let VCSCommandMapPrefix="<leader>v"
+
+" Taglist
+noremap <leader>t :TlistToggle<CR>
+let Tlist_Ctags_Cmd="/usr/bin/ctags"
+
+"Paste toggle - when pasting something in, don't indent.
+set pastetoggle=<F2>
+
+nnoremap ; :
+
+" Easy window navigation
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap <silent> ,/ :nohlsearch<CR>
+
+cmap w!! w !sudo tee % >/dev/null
+
+
+" Omni Completion
+" *************************************************************
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType cpp set omnifunc=cppcomplete#Complete
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+
+set expandtab
+set cindent
+set smartindent
+set autoindent
+set tabstop=4 shiftwidth=4 softtabstop=4 
+autocmd FileType ruby,eruby set tabstop=2 shiftwidth=2 softtabstop=2 
+autocmd FileType python,python set tabstop=4 shiftwidth=4 softtabstop=4
+
+inoremap <S-Enter> <Esc>O
+inoremap <C-Enter> <Esc>o
+inoremap <C-H> <Esc>i
+inoremap <C-L> <Esc>la
+
+inoremap <expr> <Esc>      pumvisible()?"\<C-e>":"\<Esc>"
+inoremap <expr> <C-J>      pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X>\<C-O>"
+inoremap <expr> <C-K>      pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
+inoremap <C-]>             <C-X><C-]>
+
+" for convenience in insert mode
+inoremap ( ()<ESC>i
+inoremap ) <c-r>=ClosePair(')')<CR>
+inoremap { {}<ESC>i
+inoremap } <c-r>=ClosePair('}')<CR>
+inoremap [ []<ESC>i
+inoremap ] <c-r>=ClosePair(']')<CR>
+
+function! ClosePair(char)
+    if getline('.')[col('.') - 1] == a:char
+        return "\<Right>"
+    else
+        return a:char
+    endif
+endf
+
+
+set dir=/tmp
