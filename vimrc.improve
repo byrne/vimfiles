@@ -6,6 +6,7 @@ colorscheme railscasts
 
 set noautochdir
 set nolist
+set wrap
 set nu
 set sts=2
 set sw=2
@@ -32,9 +33,9 @@ let mapleader = ","
 let g:mapleader = ","
 
 "Fast reloading of the .vimrc
-nmap <leader>s :source ~/.vimrc<CR>
+nmap <leader>ss :source ~/.vimrc<CR>
 "Fast editing of .vimrc
-nmap <leader>m :e ~/.vimrc<CR>
+nmap <leader>sm :e ~/.vimrc<CR>
 "Quick visit quickfix list
 nmap <leader>fn :cn<CR>
 nmap <leader>fp :cp<CR>
@@ -46,7 +47,7 @@ nmap <leader>bp :bp<CR>
 "Surround
 nmap <leader><leader> ysiw
 
-nmap <leader>p bPldw
+nmap <leader>bw :bw<CR>
 
 au BufNewFile,BufRead *.mxml set filetype=mxml
 au BufNewFile,BufRead *.as set filetype=actionscript
@@ -63,8 +64,11 @@ nnoremap <leader>fj :FufJumpList<CR>
 nnoremap <leader>fl :FufLine<CR>
 nnoremap <leader>fr :FufRenewCache<CR>
 
-nnoremap <leader>r viw"0p<CR>
-nnoremap <leader>R V"0p<CR>
+nnoremap <leader>p viw"0p<CR>
+nnoremap <leader>P V"0p<CR>
+
+nnoremap <leader>al z30l
+nnoremap <leader>ah z30h
 
 "map to bufexplorer
 nnoremap <C-B> :BufExplorer<cr>
