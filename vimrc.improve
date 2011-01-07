@@ -70,6 +70,10 @@ nnoremap <leader>P V"0p<CR>
 nnoremap <leader>al z30l
 nnoremap <leader>ah z30h
 
+nnoremap <leader>sg :args **/*.rb<CR>:argdo 0<CR>
+nnoremap <leader>sa :vim /<C-R><C-W>/j **/*
+nnoremap <leader>sr :vim /<C-R><C-W>/j **/*.rb<CR>
+
 "map to bufexplorer
 nnoremap <C-B> :BufExplorer<cr>
 
@@ -187,13 +191,13 @@ autocmd FileType python,python set tabstop=4 shiftwidth=4 softtabstop=4
 
 inoremap <S-Enter> <Esc>O
 inoremap <C-Enter> <Esc>o
-inoremap <C-H> <Esc>i
-inoremap <C-L> <Esc>la
 
 inoremap <expr> <Esc>      pumvisible()?"\<C-e>":"\<Esc>"
 inoremap <expr> <C-J>      pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X>\<C-O>"
 inoremap <expr> <C-K>      pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
 inoremap <C-]>             <C-X><C-]>
+inoremap <C-N>             <C-X><C-L>
+
 
 " for convenience in insert mode
 inoremap ( ()<ESC>i
