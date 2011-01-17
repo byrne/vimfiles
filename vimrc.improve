@@ -196,8 +196,6 @@ inoremap <expr> <Esc>      pumvisible()?"\<C-e>":"\<Esc>"
 inoremap <expr> <C-J>      pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X>\<C-O>"
 inoremap <expr> <C-K>      pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
 inoremap <C-]>             <C-X><C-]>
-inoremap <C-N>             <C-X><C-L>
-
 
 " for convenience in insert mode
 inoremap ( ()<ESC>i
