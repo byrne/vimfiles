@@ -9,6 +9,5 @@ your_path$ git clone git://github.com/scorpio/vimfiles.git
 </code></pre>
 
 <pre><code>
-ln -sf your_path/vimfiles ~/.vim
-ln -sf your_path/vimfiles/vimrc.improve ~/.vimrc
+$ your_path/vimfiles/install.sh
 </code></pre>
