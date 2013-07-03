@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/byrne/project/Starling-Framework_old/starling/src'
+let g:netrw_dirhist_2='/Users/byrne/project/useful_scripts'
+let g:netrw_dirhist_3='/Users/byrne/project/lovestar'
+let g:netrw_dirhist_4='/Users/byrne/bin'
+let g:netrw_dirhist_5='/Users/byrne/project/mobile_app/phonegap_test/.git'
+let g:netrw_dirhist_6='/Users/byrne/bin'
+let g:netrw_dirhist_7='/Users/byrne/.ashole/saybot/sdk/air'
+let g:netrw_dirhist_8='/Users/byrne/project/loginanalyse'
