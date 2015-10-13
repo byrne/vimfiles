@@ -215,3 +215,4 @@ endf
 
 
 set dir=/tmp
+command! W exec 'w !sudo tee % > /dev/null' | e!
